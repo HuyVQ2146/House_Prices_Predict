@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Đọc dữ liệu
-train = pd.read_csv("train.csv")
-test = pd.read_csv("test.csv")
+train = pd.read_csv("house_prices/train.csv")
+test = pd.read_csv("house_prices/test.csv")
 
+print(train.head())
