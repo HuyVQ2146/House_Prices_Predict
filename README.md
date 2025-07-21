@@ -43,4 +43,4 @@ Xây dựng mô hình dự đoán giá nhà từ dữ liệu Kaggle.
     (5.2) Chọn ra top 10 cột có tương quan lớn nhất với cột "SalePrice"
 
 + Bước 6: Kiểm tra một số feature quan trọng
-    Ta chọn ra 2 cột có tương quan cao nhất với 'SalePrice' và visualize ra để xem mối liên hệ giữa chúng (6.1, 6.2)
+    Ta chọn ra 2 cột có tương quan cao nhất với 'SalePrice' và visualize ra để xem mối liên hệ giữa chúng qua 2 biểu đồ hộp(6.1) và biểu đồ phân tán(6.2)
