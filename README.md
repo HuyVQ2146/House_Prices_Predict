@@ -48,3 +48,9 @@ Xây dựng mô hình dự đoán giá nhà từ dữ liệu Kaggle.
 
 ### ✅ Day 2 - 22/07/2025
 - Chuyển file từ dạng .py về .ipynb để nhìn dễ hơn
+- Làm preprocessing:
+- +/ Xử lí processing data
+- +/ Encoding data
+- +/ Chia training set thành features và output
+- +/ Normalize dữ liệu
+- +/ Chia training set thành train và cross-validation
