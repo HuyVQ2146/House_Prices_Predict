@@ -36,10 +36,8 @@ def one_hot_encoding(training_set, test_set):
     return training_set, test_set
 
 
-def create_features_and_target(train, test):
+def create_features_and_target(train):
     X_train = train.drop('SalePrice', axis=1)
     y_train = train['SalePrice']
     
-    X_test = test.drop('SalePrice', axis=1)
-    y_test = test['SalePrice']
-    return X_train, X_test, y_train, y_test
+    return X_train, y_train
