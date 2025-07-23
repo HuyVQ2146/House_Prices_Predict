@@ -54,3 +54,9 @@ Xây dựng mô hình dự đoán giá nhà từ dữ liệu Kaggle.
 - +/ Chia training set thành features và output
 - +/ Normalize dữ liệu
 - +/ Chia training set thành train và cross-validation
+
+### ✅ Day 3 - 23/07/2025
+- Làm model đầu tiên: Linear regression
+- Tạo dự đoán của model
+- Tính cost theo RMSE
+- Visualize model
