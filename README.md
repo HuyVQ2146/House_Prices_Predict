@@ -61,3 +61,9 @@ Xây dựng mô hình dự đoán giá nhà từ dữ liệu Kaggle.
 - chia training set thành 3 tập train, cv và test
 - Tính cost theo RMSE
 - Visualize model
+
+
+### ✅ Day 4 - 27/07/2025
+- thay degree
+- regularization
+- hoàn thiện mô hình linear regression
