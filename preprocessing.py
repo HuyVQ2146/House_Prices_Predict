@@ -1,7 +1,7 @@
 import pandas as pd
 
 def fill_missing(data_set):
-    # Nhóm 1:
+    # Group 1:
     cols_none = [
     'PoolQC', 'MiscFeature', 'Alley', 'Fence', 'FireplaceQu', 
     'GarageType', 'GarageFinish', 'GarageQual', 'GarageCond',
@@ -12,15 +12,15 @@ def fill_missing(data_set):
     for col in cols_none:
         data_set[col] = data_set[col].fillna("None")
     
-    # Nhóm 2:
+    # Group 2:
     cols_fill_zero = ['MasVnrArea', 'GarageYrBlt', 'BsmtFinSF1', 'BsmtFinSF2', 'BsmtFullBath', 'BsmtHalfBath', 
                        'BsmtUnfSF', 'TotalBsmtSF', 'GarageCars', 'GarageArea']
     data_set[cols_fill_zero] = data_set[cols_fill_zero].fillna(0)
     
-    # Nhóm 3:
+    # Group 3:
     data_set["LotFrontage"] = data_set["LotFrontage"].fillna(data_set["LotFrontage"].median())
     
-    # Nhóm 4:
+    # Group 4:
     for col in ["MSZoning", "Utilities", "Functional", "Exterior1st", "Exterior2nd", 
             "KitchenQual", "SaleType", "Electrical"]:
         data_set[col] = data_set[col].fillna(data_set[col].mode()[0])
