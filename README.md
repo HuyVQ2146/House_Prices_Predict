@@ -1,69 +1,77 @@
-# House_Prices_Predict
+# 🏠 House Prices Prediction - Kaggle Challenge
 
-# Dự đoán giá nhà - Machine Learning Project
+> A machine learning project to predict house prices using real estate data from Kaggle’s House Prices: Advanced Regression Techniques competition.
 
-## Mục tiêu
-Xây dựng mô hình dự đoán giá nhà từ dữ liệu Kaggle.
+## 📌 Project Overview
 
-## Timeline phát triển
-- **Bắt đầu:** 21/07/2025
-- **Kết thúc (dự kiến):** 10/08/2025
+This project aims to build predictive models that estimate house sale prices based on features such as living area, number of rooms, quality ratings, and more. The project compares multiple regression models and tracks learning progress along the way.
+
+- **Competition**: [House Prices - Advanced Regression Techniques (Kaggle)](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
+- **Duration**: 21/07/2025 → 28/07/2025
+- **Author**: Vũ Quang Huy
 
 ---
 
-## Nhật ký học tập & phát triển
+## 🎯 Objectives
 
-### ✅ Day 1 - 21/07/2025
-- Tham gia competition trên Kaggle.
-- Tải dữ liệu.
-- Làm sơ bộ EDA.
-- Bắt đầu làm quen với pandas.
-- Bị rối ở bước chọn file location và chạy trong terminal
+- Perform Exploratory Data Analysis (EDA)
+- Preprocess and clean real-world data
+- Build and evaluate multiple machine learning models:
+  - Linear Regression (baseline)
+  - Random Forest
+  - XGBoost
+- Track progress via a study log
+- Identify the best model based on RMSE on validation/test sets
 
-- Hoàn thành 6 bước để phân tích dữ liệu:
+---
 
-    - **Bước 1**: Import thư viện & đọc dữ liệu
-        - Dùng các thư viện như pandas (để phân tích dữ liệu), numpy (để vecto, tối ưu hóa thuật toán), seaborn và matplotlib (để visualize dữ liệu)
-        - Sau đó, đọc(1.1) và xem kích thước(1.2) dữ liệu
+## 🗂️ Folder Structure
+House_Prices_Predict/
+├── house_prices/ # Raw and processed data
+    ├── data_description.txt
+    ├── sample_submission.csv
+    ├── test.csv
+    ├── train.csv
+├── 01_EDA.ipynb # An overview through data
+├── 02_Preprocessing.ipynb # Preprocessing
+├── 03_Models.ipynb # models
+├── 04_Predict.ipynb # use the best model to predict the test-price
+├── preprocessiong.py # reusable code for preprocessing
+├── README.md # This file
+├── result.png # My first time in Kaggle leaderboard
+└── submission.csv # The prediction of the best model to submit in the competition
 
-    - **Bước 2**: Tổng quan dữ liệu
-        - Kiểm tra thông tin của training set:
-            - (2.1) Thông tin các cột: kiểu dữ liệu, non-null: dùng .info() cho training set (train)
-            - (2.2) Thống kê cơ bản cho các cột số: dùng .describe() cho training set (train)
+---
 
-    - **Bước 3**: Kiểm tra missing data từng cột 
-        - (3.1) Tính số dữ liệu bị thiếu của từng cột: dùng tổng .sum() của các phần dữ liệu đc đánh dấu là Null(hoặc NaN), tìm bằng hàm .isNull(), của từng cột   
-        - (3.2) Sắp xếp các dữ liệu tìm được theo thứ tự số missing data giảm dần để xem những phần dữ liệu nào nên hạn chế sử dụng để train (hoặc để kiếm thêm dữ liệu bù vào)
+## 🧪 Models & Performance
 
-    - **Bước 4**: Phân phối biến mục tiêu 'SalePrice': vì chúng ta muốn dự đoán  giá nhà nên dữ liệu quan trọng nhất là giá nhà có sẵn (y)
-        - Qua biểu đồ cột, ta có góc nhìn tổng quan về giá nhà (giá tầm 120k là có nhiều nhất)
+| Model              | Train RMSE | CV RMSE  | Test RMSE | Notes                 |
+|--------------------|------------|----------|-----------|-----------------------|
+| Linear Regression  | 16009.35   | 24152.73 | 25939.93  | Best model (lambda=30)|
+| Random Forest      | 13359.81   | 29842.53 | 34197.30  | Overfitting           |
+| XGBoost            |  2330.72   | 28676.99 | 29671.82  | Strong overfit        |
 
-    - **Bước 5**: Phân tích tương qua với cột 'SalePrice' để tìm những cột số nào có tương quan mạnh nhất với SalePrice (để dùng những cột đó làm dữ liệu train model)
-        - (5.1) Xét tương quan chỉ với những cột có giá trị số thôi (có thể chuyển sang dạng DataFrame để dễ nhìn hơn)
-        - (5.2) Chọn ra top 10 cột có tương quan lớn nhất với cột "SalePrice"
+---
 
-    - **Bước 6**: Kiểm tra một số feature quan trọng
-        - Ta chọn ra 2 cột có tương quan cao nhất với 'SalePrice' và visualize ra để xem mối liên hệ giữa chúng qua 2 biểu đồ hộp(6.1) và biểu đồ phân tán(6.2)
+## 📊 Key Techniques Used
 
+- Data visualization using `matplotlib` and `seaborn`
+- Feature correlation analysis
+- Polynomial features & regularization (L2)
+- Train-validation-test split (manual)
+- RMSE evaluation metric
+- Hyperparameter tuning (lambda, degree, depth, etc.)
+- Log-transforming target (`SalePrice`) for better learning
 
-### ✅ Day 2 - 22/07/2025
-- Chuyển file từ dạng .py về .ipynb để nhìn dễ hơn
-- Làm preprocessing:
-- +/ Xử lí processing data
-- +/ Encoding data
-- +/ Chia training set thành features và output
-- +/ Normalize dữ liệu
-- +/ Chia training set thành train và cross-validation
+---
 
-### ✅ Day 3 - 23/07/2025
-- Làm model đầu tiên: Linear regression
-- Tạo dự đoán của model
-- chia training set thành 3 tập train, cv và test
-- Tính cost theo RMSE
-- Visualize model
+## 🧠 Study Log Highlights
 
+- ✅ **Day 1** (21/07): Data loading, EDA, pandas basics  
+- ✅ **Day 2** (22/07): Preprocessing, encoding, splitting data  
+- ✅ **Day 3** (23/07): Baseline linear model + RMSE evaluation  
+- ✅ **Day 4** (27/07): Model tuning with polynomial + regularization  
+- ✅ **Day 5** (28/07): Added XGBoost, Random Forest — confirmed Linear still best, 
+                        submitted the prediction to the competition
 
-### ✅ Day 4 - 27/07/2025
-- thay degree
-- regularization
-- hoàn thiện mô hình linear regression
+---
