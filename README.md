@@ -7,7 +7,7 @@
 This project aims to build predictive models that estimate house sale prices based on features such as living area, number of rooms, quality ratings, and more. The project compares multiple regression models and tracks learning progress along the way.
 
 - **Competition**: [House Prices - Advanced Regression Techniques (Kaggle)](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
-- **Duration**: 21/08/2025 → 28/08/2025
+- **Duration**: 21/07/2025 → 28/07/2025
 - **Author**: Vũ Quang Huy
 
 ---
@@ -67,11 +67,11 @@ House_Prices_Predict/
 
 ## 🧠 Study Log Highlights
 
-- ✅ **Day 1** (21/08): Data loading, EDA, pandas basics  
-- ✅ **Day 2** (22/08): Preprocessing, encoding, splitting data  
-- ✅ **Day 3** (23/08): Baseline linear model + RMSE evaluation  
-- ✅ **Day 4** (27/08): Model tuning with polynomial + regularization  
-- ✅ **Day 5** (28/08): Added XGBoost, Random Forest — confirmed Linear still best, 
+- ✅ **Day 1** (21/07): Data loading, EDA, pandas basics  
+- ✅ **Day 2** (22/07): Preprocessing, encoding, splitting data  
+- ✅ **Day 3** (23/07): Baseline linear model + RMSE evaluation  
+- ✅ **Day 4** (27/07): Model tuning with polynomial + regularization  
+- ✅ **Day 5** (28/07): Added XGBoost, Random Forest — confirmed Linear still best, 
                         submitted the prediction to the competition
 
 ---
